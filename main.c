@@ -59,3 +59,63 @@ void wait_for_enter()
     while (getchar() != '\n');
     getchar();
 }
+void add_new_book()
+{
+    if (library.bookCount < 100)
+    {
+        struct Book book;
+        printf("Enter Title: ");
+        scanf(" %[^\n]", book.title);
+        printf("Enter Author: ");
+        scanf(" %[^\n]", book.author); // Read the entire line, including spaces
+        book.available = true;
+        library.books[library.bookCount] = book;
+        library.bookCount++;
+        printf("Book added successfully!\n");
+    }
+    else
+    {
+        printf("The library is full, cannot add more books.\n");
+    }
+}
+
+
+void add_new_patron()
+{
+    if (library.patronCount < 100)
+    {
+        struct Patron patron;
+        printf("Name: ");
+        scanf(" %[^\n]", patron.name); // Read the entire line, including spaces
+
+        library.patrons[library.patronCount] = patron;
+        library.patronCount++;
+        printf("Patron added successfully!\n");
+    }
+    else
+    {
+        printf("The patron list is full, cannot add more patrons.\n");
+    }
+}
+
+void check_out_book()
+{
+    int bookID;
+    printf("Enter Book ID for check out: ");
+    scanf("%d", &bookID);
+
+    if (bookID < 1 || bookID > library.bookCount)
+    {  
+        printf("Invalid book ID.\n");
+    }
+    else if (!library.books[bookID - 1].available)
+    {
+        printf("The book is already checked out.\n");
+    }
+    else
+    {
+        library.books[bookID - 1].available = false;
+        printf("Book checked out successfully!\n");
+    }
+}
+
