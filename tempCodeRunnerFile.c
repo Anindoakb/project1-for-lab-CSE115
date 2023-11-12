@@ -3,9 +3,16 @@
 #include <string.h>
 #include <stdbool.h>
 #include"login.h"
-#include"menu_driven_program.h"
-#include"splash_screen.h"
+#include"Menu_driven_program.h"
+#include"splash.h"
+int main()
+{
+    Library.bookCount = 0;
+    Library.patronCount = 0;
+    load_data_from_file();
+    splash_screen();
 
+    bool islogged=login();
 struct Book
 {
     char title[100];
@@ -52,7 +59,6 @@ void wait_for_enter()
     while (getchar() != '\n');
     getchar();
 }
-
 void add_new_book()
 {
     if (library.bookCount < 100)
@@ -99,7 +105,7 @@ void check_out_book()
     scanf("%d", &bookID);
 
     if (bookID < 1 || bookID > library.bookCount)
-    {
+    {  
         printf("Invalid book ID.\n");
     }
     else if (!library.books[bookID - 1].available)
@@ -112,7 +118,6 @@ void check_out_book()
         printf("Book checked out successfully!\n");
     }
 }
-
 void return_book()
 {
     int bookID;
@@ -341,17 +346,15 @@ void load_data_from_file()
         printf("No data file found. Starting with an empty library.\n");
     }
 }
-int main(void)
+int main()
 {
     library.bookCount = 0;
     library.patronCount = 0;
     load_data_from_file();
     splash_screen();
 
-    bool islogged=login();
 
-
-    while (islogged)
+    while (true)
     {
 
 
@@ -403,5 +406,5 @@ int main(void)
         wait_for_enter();
     }
 
-return 0;
+    return 0;
 }
