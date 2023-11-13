@@ -1,0 +1,17 @@
+# depslib dependency file v1.0
+1699825355 source:c:\users\anindo\desktop\cse115 project\project1 for lab\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<stdbool.h>
+	"login.h"
+	"menu_driven_program.h"
+	"splash_screen.h"
+
+1699099129 c:\users\anindo\desktop\cse115 project\project1 for lab\login.h
+
+1699187196 c:\users\anindo\desktop\cse115 project\project1 for lab\menu_driven_program.h
+
+1698928336 c:\users\anindo\desktop\cse115 project\project1 for lab\splash_screen.h
+	<stdio.h>
+

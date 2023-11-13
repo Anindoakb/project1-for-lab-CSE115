@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <stdbool.h>
+#include <unistd.h>
 #include"login.h"
 #include"menu_driven_program.h"
 #include"splash_screen.h"
@@ -403,5 +404,5 @@ int main(void)
         wait_for_enter();
     }
 
-return 0;
+    return 0;
 }

@@ -1,7 +1,7 @@
 void splash_screen() {
     printf("\n\n\t\tWelcome to PhoneBook\n\n");
      printf("\n\n\t\tWelcome to:\n");
-   #include <stdio.h>
+   
 
 
     printf("####       ####   ### ##   ### ##     ##     ### ##   ##  ##   \n");
@@ -30,7 +30,7 @@ void splash_screen() {
 
      printf("\t\t\n\nLoading...\n");
     sleep(3);
-    return 0;
+   
 }
 
 
